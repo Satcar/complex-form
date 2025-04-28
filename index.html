@@ -3,51 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizzeria de Arnau</title>
+    <title>Pizzería de Arnau</title>
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
-    <h1>Haz tu pedido</h1><hr>
+    <h1>Haz tu pedido 🍕</h1><hr>
 
     <div class="box">
         <form action="recibido.html" method="get" name="pedidoPizza">
 
-            <select name="tratamiento" id="tratamiento">
-                <option value="sr">Sr.</option>
-                <option value="sra">Sra.</option>
-                <option value="otre">Otre</option>
-            </select>
+            <fieldset>
+                <legend>Información personal</legend>
 
-            <input type="text" name="nombre" placeholder="Tu nombre" required><br>
+                <label for="tratamiento">Tratamiento</label>
+                <select name="tratamiento" id="tratamiento" required>
+                    <option value="sr">Sr.</option>
+                    <option value="sra">Sra.</option>
+                    <option value="otre">Otre</option>
+                </select>
 
-            <label for="telefono">Telefono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="612 345 678" required><br>
+                <input type="text" name="nombre" placeholder="Tu nombre" required>
 
-            <label for="pizza">Tipo de pizza</label>
-            <select name="pizza" id="pizza" required>
-                <option value="margarita">Margarita</option>
-                <option value="pepperoni">Pepperoni</option>
-                <option value="barbacoa">Barbacoa</option>
-                <option value="cuatro quesos">Cuatro quesos</option>
-                <option value="carbonara">Carbonara</option>
-                <option value="atun">Atun</option>
-            </select><br>
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="612345678" required>
 
-            <label>Ingredientes extra</label><br>
-            <input type="checkbox" name="toppingsAdicionales[]" value="queso extra"> Queso extra<br>
-            <input type="checkbox" name="toppingsAdicionales[]" value="aceitunas"> Aceitunas<br>
-            <input type="checkbox" name="toppingsAdicionales[]" value="champiñones"> Champiñones<br>
-            <input type="checkbox" name="toppingsAdicionales[]" value="anchoas"> Anchoas<br>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="ejemplo@email.com" required>
 
-            <label>Como quieres recibir tu pedido?</label><br>
-            <input type="radio" name="envio" value="casa" required> Enviar a casa<br>
-            <input type="radio" name="envio" value="recoger"> Venir a buscar<br>
+                <label for="password">Contraseña para el repartidor</label>
+                <input type="password" id="password" name="password" placeholder="Crea una contraseña" required>
 
-            <label for="comentario">Comentarios</label><br>
-            <textarea id="comentario" name="comentario" maxlength="150" placeholder="Informacion adicional..."></textarea><br>
+            </fieldset>
 
-            <input type="submit" value="Enviar pedido" id="submit"><br>
+            <fieldset>
+                <legend>Pedido de pizza</legend>
 
+                <label for="pizza">Tipo de pizza</label>
+                <select name="pizza" id="pizza" required>
+                    <option value="margarita">Margarita</option>
+                    <option value="pepperoni">Pepperoni</option>
+                    <option value="barbacoa">Barbacoa</option>
+                    <option value="cuatro quesos">Cuatro quesos</option>
+                    <option value="carbonara">Carbonara</option>
+                    <option value="atun">Atún</option>
+                </select>
+
+                <label>Ingredientes extra</label><br>
+                <input type="checkbox" name="toppingsAdicionales[]" value="queso extra" checked> Queso extra<br>
+                <input type="checkbox" name="toppingsAdicionales[]" value="aceitunas"> Aceitunas<br>
+                <input type="checkbox" name="toppingsAdicionales[]" value="champiñones"> Champiñones<br>
+                <input type="checkbox" name="toppingsAdicionales[]" value="anchoas"> Anchoas<br>                
+
+                <label>Cómo quieres recibir tu pedido?</label><br>
+                <input type="radio" name="envio" value="casa" required> Enviar a casa <br>
+                <input type="radio" name="envio" value="recoger"> Venir a buscar <br>
+
+                <label for="direccion">Dónde deseas recibir tu pedido? (opcional) </label>
+                <input type="text" id="direccion" name="direccion" placeholder="Carrer de Pamplona, 96, Sant Martí, 08018 Barcelona">
+
+
+               
+
+                <label for="comentario">Comentarios adicionales</label>
+                <textarea id="comentario" name="comentario" maxlength="150" placeholder="Información adicional..."></textarea>
+
+            </fieldset>
+
+            <input type="submit" value="Enviar pedido" id="submit">
         </form>
     </div>
 
